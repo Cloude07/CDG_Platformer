@@ -9,14 +9,13 @@ public class Ladder : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (Input.GetKey(KeyCode.W) && isJump)
+            other.TryGetComponent(out Rigidbody2D rigidbody2D);
+            if (Input.GetKey(KeyCode.W) && isJump && rigidbody2D.velocity.y == 0)
             {
                 isJump = false;
             }
             if (!isJump)
             {
-                other.TryGetComponent(out Rigidbody2D rigidbody2D);
-
                 if (Input.GetKey(KeyCode.W))
                 {
                     rigidbody2D.velocity = new Vector2(0, speed);
