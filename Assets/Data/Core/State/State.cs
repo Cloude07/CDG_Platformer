@@ -1,0 +1,23 @@
+
+using UnityEngine;
+
+namespace CDG.Core.State
+{
+    public abstract class State: MonoBehaviour
+    {
+        public virtual void Enter()
+        {
+
+        }
+
+        public virtual void Exit()
+        {
+
+        }
+
+        public virtual void Update()
+        {
+
+        }
+    }
+}
